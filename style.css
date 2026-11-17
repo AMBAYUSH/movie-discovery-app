@@ -113,3 +113,47 @@ body {
     padding: 0 16px;
   }
 }
+
+.movie-card {
+  background: #191c27;
+  border: 1px solid #2b2f3e;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+}
+
+.movie-card img,
+.poster-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.poster-placeholder {
+  display: grid;
+  place-items: center;
+  background: #303443;
+  color: #b4b4bd;
+  padding: 16px;
+  text-align: center;
+}
+
+.movie-info {
+  padding: 16px;
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.movie-info p {
+  color: #b4b4bd;
+  font-size: 14px;
+  margin-top: 6px;
+}
