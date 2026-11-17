@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVault | Movie Discovery</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">CINE<span>VAULT</span></div>
+    <p>Discover your next favorite movie.</p>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>What are we watching tonight?</h1>
+      <p>Explore thousands of movies in one place.</p>
+
+      <form id="searchForm" class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a movie..."
+          required
+        >
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section class="results">
+      <h2 id="resultsTitle">Discover Movies</h2>
+      <div id="movieGrid" class="movie-grid"></div>
+    </section>
+  </main>
+</body>
+</html>
