@@ -57,6 +57,45 @@ app.get("/api/movies", async (req, res) => {
   }
 });
 
+app.get("/api/movies/:id", async (req, res) => {
+  const movieId = req.params.id;
+
+  // Only allow numeric movie IDs
+  if (!/^\d+$/.test(movieId)) {
+    return res.status(400).json({
+      error: "Invalid movie ID"
+    });
+  }
+
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.TMDB_TOKEN}`,
+          Accept: "application/json"
+        }
+      }
+    );
+
+    if (!response.ok) {
+      return res.status(response.status).json({
+        error: "Unable to retrieve movie details"
+      });
+    }
+
+    const movie = await response.json();
+
+    res.json(movie);
+  } catch (error) {
+    console.error("Movie details error:", error.message);
+
+    res.status(502).json({
+      error: "Movie details are temporarily unavailable"
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`CineVault running at http://localhost:${PORT}`);
 });

@@ -157,3 +157,96 @@ body {
   font-size: 14px;
   margin-top: 6px;
 }
+
+/* Clickable movie cards */
+
+.movie-card {
+  cursor: pointer;
+}
+
+.movie-card:focus-visible {
+  outline: 3px solid #e50914;
+  outline-offset: 4px;
+}
+
+/* Movie details modal */
+
+.movie-modal {
+  position: fixed;
+  margin: auto;
+  width: min(850px, 92vw);
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
+  background: #171a24;
+  color: white;
+  border: 1px solid #343849;
+  border-radius: 18px;
+  padding: 30px;
+}
+
+.movie-modal::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.close-modal {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  background: #303442;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.modal-poster {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.modal-details h2 {
+  font-size: 30px;
+  margin: 0 35px 18px 0;
+}
+
+.modal-details p {
+  color: #c4c5cf;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.modal-details strong {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .movie-modal {
+    padding: 22px 16px;
+  }
+
+  .modal-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .modal-poster {
+    max-width: 180px;
+  }
+
+  .modal-details h2 {
+    font-size: 24px;
+  }
+}
